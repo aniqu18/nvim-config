@@ -348,6 +348,9 @@ do
 
   -- Here is a more advanced configuration example that passes options to `gitsigns.nvim`
   --
+  -- Git client: stage hunks, commit, diff, blame, etc.
+  vim.pack.add { gh 'tpope/vim-fugitive' }
+
   -- See `:help gitsigns` to understand what each configuration key does.
   -- Adds git related signs to the gutter, as well as utilities for managing changes
   vim.pack.add { gh 'lewis6991/gitsigns.nvim' }
@@ -970,7 +973,7 @@ do
   -- require 'kickstart.plugins.indent_line'
   -- require 'kickstart.plugins.lint'
   -- require 'kickstart.plugins.autopairs'
-  -- require 'kickstart.plugins.neo-tree'
+  require 'kickstart.plugins.neo-tree'
   -- require 'kickstart.plugins.gitsigns' -- adds gitsigns recommended keymaps
 
   -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
