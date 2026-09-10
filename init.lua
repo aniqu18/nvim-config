@@ -164,6 +164,21 @@ do
   -- Show which line your cursor is on
   vim.o.cursorline = true
 
+  -- Enable spellcheck for prose files
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'markdown', 'text' },
+    callback = function()
+      vim.opt_local.spell = true
+      vim.opt_local.spelllang = 'en_us'
+      vim.opt_local.wrap = true
+      vim.opt_local.linebreak = true
+    end,
+  })
+
+  -- Solution for solving git conflicts
+  vim.pack.add { gh 'akinsho/git-conflict.nvim' }
+  require('git-conflict').setup()
+
   -- Minimal number of screen lines to keep above and below the cursor.
   vim.o.scrolloff = 10
 
@@ -984,3 +999,4 @@ end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
